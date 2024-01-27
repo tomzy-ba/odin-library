@@ -8,6 +8,11 @@ function Book(title, author, pages) {
 }
 
 function addBookToLibrary() {
-    const newBook = new Book(title, author, pages)
-    myLibrary.push(newBook)
+    const newBook = new Book(title, author, pages);
+    myLibrary.push(newBook);
 }
+
+myLibrary.forEach(book => {
+    alert()
+})
+
