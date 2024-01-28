@@ -15,11 +15,12 @@ function addBookToLibrary(title, author, pages) {
 }
 const bookTable = document.querySelector("#bookTable");
 const bookTableTitle = document.querySelector("#bookTableTitle");
-const bookTableAuthor = document.querySelector("#bookTableAuthor")
-const bookTablePages = document.querySelector("#bookTablePages")
+const bookTableAuthor = document.querySelector("#bookTableAuthor");
+const bookTablePages = document.querySelector("#bookTablePages");
+const bookTableRemove = document.querySelector("#bookTableRemove");
 
 function displayBooks() {
-    bookTableTitle.innerHTML = ""; bookTableAuthor.innerHTML = ""; bookTablePages.innerHTML = "";
+    bookTableTitle.innerHTML = ""; bookTableAuthor.innerHTML = ""; bookTablePages.innerHTML = ""; bookTableRemove.innerHTML = "";
 
     myLibrary.forEach(book => {
         const newBookTableTitle = document.createElement("th");
@@ -34,9 +35,11 @@ function displayBooks() {
         newBookTablePages.innerHTML = book.pages;
         bookTablePages.append(newBookTablePages);
         
-        const newBookTableTitleRemove = document.createElement("button");
-        newBookTableTitleRemove.innerText = "";
-        bookTableTitle.append(newBookTableTitleRemove);
+        const newBookTableRemoveHolder = document.createElement("td");
+        const newBookTableRemove = document.createElement("button");
+        newBookTableRemove.innerHTML = "Remove";
+        newBookTableRemoveHolder.append(newBookTableRemove);
+        bookTableRemove.append(newBookTableRemoveHolder);
 
     })
 }
