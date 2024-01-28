@@ -22,7 +22,7 @@ const bookTableRemove = document.querySelector("#bookTableRemove");
 function displayBooks() {
     bookTableTitle.innerHTML = ""; bookTableAuthor.innerHTML = ""; bookTablePages.innerHTML = ""; bookTableRemove.innerHTML = "";
 
-    myLibrary.forEach(book => {
+    myLibrary.forEach((book, index) => {
         const newBookTableTitle = document.createElement("th");
         newBookTableTitle.innerHTML = book.title;
         bookTableTitle.append(newBookTableTitle);
@@ -38,9 +38,12 @@ function displayBooks() {
         const newBookTableRemoveHolder = document.createElement("td");
         const newBookTableRemove = document.createElement("button");
         newBookTableRemove.innerHTML = "Remove";
+        newBookTableRemove.addEventListener("click", () => {
+            myLibrary.splice(index, 1);
+            displayBooks()
+        })
         newBookTableRemoveHolder.append(newBookTableRemove);
         bookTableRemove.append(newBookTableRemoveHolder);
-
     })
 }
 
