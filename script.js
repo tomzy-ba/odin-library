@@ -6,10 +6,11 @@ function Book(title, author, pages) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-}
+    this.read = false;
+    }
 
 // this sends new books to the function constructor
-function addBookToLibrary(title, author, pages) {
+function addBookToLibrary(title, author, pages, read) {
     const newBook = new Book(title, author, pages);
     myLibrary.push(newBook);
 }
@@ -37,13 +38,33 @@ function displayBooks() {
         
         const newBookTableRemoveHolder = document.createElement("td");
         const newBookTableRemove = document.createElement("button");
-        newBookTableRemove.innerHTML = "Remove";
+        const newBookTableRead = document.createElement("button");
+
+        newBookTableRemove.innerHTML = "x";
+        newBookTableRead.innerHTML = "uead";
+
         newBookTableRemove.addEventListener("click", () => {
-            myLibrary.splice(index, 1);
-            displayBooks()
+            myLibrary.splice(index, 1)
+            displayBooks();
         })
+
+        newBookTableRead.addEventListener("click", () => {
+            book.read = !book.read;
+            displayBooks();
+        })
+        if(book.read == true) {
+           newBookTableRead.innerHTML = "read" 
+        } else { 
+            newBookTableRead.innerHTML = "unread"
+        }
+
+
         newBookTableRemoveHolder.append(newBookTableRemove);
+        newBookTableRemoveHolder.append(newBookTableRead);
         bookTableRemove.append(newBookTableRemoveHolder);
+        
+
+
     })
 }
 
