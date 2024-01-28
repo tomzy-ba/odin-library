@@ -25,7 +25,7 @@ function displayBooks() {
         const newBookTableTitle = document.createElement("th");
         newBookTableTitle.innerHTML = book.title;
         bookTableTitle.append(newBookTableTitle);
-
+        
         const newBookTableAuthor = document.createElement("td")
         newBookTableAuthor.innerHTML = book.author;
         bookTableAuthor.append(newBookTableAuthor);
@@ -33,6 +33,11 @@ function displayBooks() {
         const newBookTablePages = document.createElement("td");
         newBookTablePages.innerHTML = book.pages;
         bookTablePages.append(newBookTablePages);
+        
+        const newBookTableTitleRemove = document.createElement("button");
+        newBookTableTitleRemove.innerText = "";
+        bookTableTitle.append(newBookTableTitleRemove);
+
     })
 }
 
