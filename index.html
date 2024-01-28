@@ -11,7 +11,17 @@
     <h1>library</h1>
     <button id="openDialogButton">Add Book</button>
     <dialog id="addBookDialog">
-        <p>hello there!</p>
+        <h1>Enter Book Details</h1>
+        <form>
+            <label for="booktitle">Book Title</label>
+            <input type="text" name="booktitle" id="inputBookTitle">
+
+            <label for="bookauthor">Book Author</label>
+            <input type="text" name="bookauthor" id="inputBookAuthor">
+
+            <label for="bookpages">Number of Pages</label>
+            <input type="text" name="bookpages" id="inputBookPages">
+        </form>
         <button id="closeDialogButton">Close</button>
     </dialog>
 

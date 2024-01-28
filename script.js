@@ -37,12 +37,19 @@ const openDialogButton = document.querySelector("#openDialogButton");
 const addBookDialog = document.querySelector("#addBookDialog");
 const closeDialogButton = document.querySelector("#closeDialogButton");
 
+
 openDialogButton.addEventListener("click", () => {
     addBookDialog.showModal();
 })
 closeDialogButton.addEventListener("click", () =>{
     addBookDialog.close();
 })
+
+const inputBookTitle = document.querySelector("#inputBookTitle");
+const inputBookAuthor = document.querySelector("#inputBookAuthor");
+const inputBookPages = document.querySelector("#inputBookPages");
+
+
 
 addBookToLibrary("The hobbit", "Tolkien", "763");
 addBookToLibrary("Harry Potter", "JK Rowling", "1042");
