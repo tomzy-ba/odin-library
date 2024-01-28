@@ -13,11 +13,14 @@ function addBookToLibrary(title, author, pages) {
     const newBook = new Book(title, author, pages);
     myLibrary.push(newBook);
 }
+const bookTable = document.querySelector("#bookTable");
 const bookTableTitle = document.querySelector("#bookTableTitle");
 const bookTableAuthor = document.querySelector("#bookTableAuthor")
 const bookTablePages = document.querySelector("#bookTablePages")
 
 function displayBooks() {
+    bookTableTitle.innerHTML = ""; bookTableAuthor.innerHTML = ""; bookTablePages.innerHTML = "";
+
     myLibrary.forEach(book => {
         const newBookTableTitle = document.createElement("th");
         newBookTableTitle.innerHTML = book.title;
@@ -48,10 +51,10 @@ closeDialogButton.addEventListener("click", () =>{
 const inputBookTitle = document.querySelector("#inputBookTitle");
 const inputBookAuthor = document.querySelector("#inputBookAuthor");
 const inputBookPages = document.querySelector("#inputBookPages");
+const bookFormSubmit = document.querySelector("#bookFormSubmit");
 
-
-
-addBookToLibrary("The hobbit", "Tolkien", "763");
-addBookToLibrary("Harry Potter", "JK Rowling", "1042");
-
-displayBooks();
+bookFormSubmit.addEventListener("click", (event) => {
+    event.preventDefault();
+    addBookToLibrary(inputBookTitle.value, inputBookAuthor.value, inputBookPages.value);
+    displayBooks();
+})
