@@ -14,14 +14,21 @@ function addBookToLibrary(title, author, pages) {
     myLibrary.push(newBook);
 }
 const bookTableTitle = document.querySelector("#bookTableTitle");
+const bookTableAuthor = document.querySelector("#bookTableAuthor")
+const bookTablePages = document.querySelector("#bookTablePages")
 
 function displayBooks() {
     myLibrary.forEach(book => {
         const newBookTableTitle = document.createElement("th");
-        newBookTableTitle.innerText = this;
+        newBookTableTitle.innerHTML = book.title;
         bookTableTitle.append(newBookTableTitle);
-        console.log()
 
+        const newBookTableAuthor = document.createElement("td")
+        newBookTableAuthor.innerHTML = book.author;
+        bookTableAuthor.append(newBookTableAuthor);
+        const newBookTablePages = document.createElement("td");
+        newBookTablePages.innerHTML = book.pages;
+        bookTablePages.append(newBookTablePages);
     })
 }
 
