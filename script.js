@@ -18,7 +18,9 @@ const bookTableTitle = document.querySelector("#bookTableTitle");
 function displayBooks() {
     myLibrary.forEach(book => {
         const newBookTableTitle = document.createElement("th");
-        newBookTableTitle.innerText = "hello";
+        newBookTableTitle.innerText = this;
+        bookTableTitle.append(newBookTableTitle);
+        console.log()
 
     })
 }
