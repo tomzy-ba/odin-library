@@ -36,12 +36,11 @@ function displayBooks() {
         newBookTablePages.innerHTML = book.pages;
         bookTablePages.append(newBookTablePages);
         
-        const newBookTableRemoveHolder = document.createElement("td");
+        const newBookTableHolder = document.createElement("td");
         const newBookTableRemove = document.createElement("button");
         const newBookTableRead = document.createElement("button");
 
-        newBookTableRemove.innerHTML = "x";
-        newBookTableRead.innerHTML = "uead";
+        newBookTableRemove.innerHTML = "Remove";
 
         newBookTableRemove.addEventListener("click", () => {
             myLibrary.splice(index, 1)
@@ -53,15 +52,15 @@ function displayBooks() {
             displayBooks();
         })
         if(book.read == true) {
-           newBookTableRead.innerHTML = "read" 
+           newBookTableRead.innerHTML = "read";
         } else { 
-            newBookTableRead.innerHTML = "unread"
+            newBookTableRead.innerHTML = "unread";
         }
 
 
-        newBookTableRemoveHolder.append(newBookTableRemove);
-        newBookTableRemoveHolder.append(newBookTableRead);
-        bookTableRemove.append(newBookTableRemoveHolder);
+        newBookTableHolder.append(newBookTableRemove);
+        newBookTableHolder.append(newBookTableRead);
+        bookTableRemove.append(newBookTableHolder);
         
 
 
