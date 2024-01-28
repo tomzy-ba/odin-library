@@ -26,10 +26,15 @@ function displayBooks() {
         const newBookTableAuthor = document.createElement("td")
         newBookTableAuthor.innerHTML = book.author;
         bookTableAuthor.append(newBookTableAuthor);
+
         const newBookTablePages = document.createElement("td");
         newBookTablePages.innerHTML = book.pages;
         bookTablePages.append(newBookTablePages);
     })
+}
+
+function inputBook() {
+    
 }
 
 addBookToLibrary("The hobbit", "Tolkien", "763");
