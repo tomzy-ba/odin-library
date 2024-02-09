@@ -12,7 +12,6 @@ class Book {
         this.read = !this.read;
     }
 }
-new Book("life of pi", "jeff", "321")
 
 
 document.querySelector("#newBookButton").addEventListener("click", () => {
@@ -54,8 +53,11 @@ function displayLibrary() {
         bookDiv.append(bookPages);
 
         const bookRemove = document.createElement("button");
+        bookRemove.innerText = "hello";
+        bookDiv.append(bookRemove);
         bookRemove.addEventListener("click", () => {
-
+            myLibrary.splice(index, 1)
+            displayLibrary();
         })
 
     })
