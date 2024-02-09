@@ -27,7 +27,37 @@ document.querySelector("#newBookButton").addEventListener("click", () => {
     dialogSubmit.addEventListener("click", (event) => {
         event.preventDefault();
         new Book(inputTitle.value, inputAuthor.value, inputPages.value);
-
+        displayLibrary();
     })
 
 })
+
+
+function displayLibrary() {
+    const libraryDiv = document.querySelector("#libraryDiv");
+    libraryDiv.innerHTML = "";
+
+    myLibrary.forEach((book, index) => {
+        const bookDiv = document.createElement("div");
+        libraryDiv.append(bookDiv);
+
+        const bookTitle = document.createElement("div");
+        bookTitle.innerText = book.title;
+        bookDiv.append(bookTitle);
+
+        const bookAuthor = document.createElement("div");
+        bookAuthor.innerText = book.author;
+        bookDiv.append(bookAuthor);
+
+        const bookPages = document.createElement("div");
+        bookPages.innerText = book.pages;
+        bookDiv.append(bookPages);
+
+        const bookRemove = document.createElement("button");
+        bookRemove.addEventListener("click", () => {
+
+        })
+
+    })
+}
+displayLibrary()
