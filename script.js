@@ -1,3 +1,5 @@
+const myLibrary = [];
+
 class Book {
     constructor(title, author, pages) {
         this.title = title;
@@ -10,6 +12,8 @@ class Book {
     }
 }
 const jeff = new Book("life of pi", "jeff", "321")
-console.log(jeff.read)
 
-const newBookBtn = 
+const newBookBtn = document.querySelector("#newBookButton");
+newBookBtn.addEventListener("click", () => {
+    new Book(prompt("Would you like"))
+})
