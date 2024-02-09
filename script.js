@@ -53,12 +53,21 @@ function displayLibrary() {
         bookDiv.append(bookPages);
 
         const bookRemove = document.createElement("button");
-        bookRemove.innerText = "hello";
+        bookRemove.innerText = "remove";
         bookDiv.append(bookRemove);
         bookRemove.addEventListener("click", () => {
             myLibrary.splice(index, 1)
             displayLibrary();
         })
+
+        const bookReadStatus = document.createElement("button");
+        bookReadStatus.innerText = `read: ${book.read}`;
+        bookDiv.append(bookReadStatus);
+        bookReadStatus.addEventListener("click", () => {
+           book.toggleRead();
+           displayLibrary();
+        })
+
 
     })
 }
