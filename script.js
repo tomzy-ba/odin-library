@@ -16,21 +16,22 @@ class Book {
 
 document.querySelector("#newBookButton").addEventListener("click", () => {
     const bookDialog = document.querySelector("#bookDialog");
-    const dialogSubmit = document.querySelector("#dialogSubmit");
 
     const inputTitle = document.querySelector("#inputTitle");
     const inputAuthor = document.querySelector("#inputAuthor");
     const inputPages = document.querySelector("#inputPages");
 
     bookDialog.showModal();
-    dialogSubmit.addEventListener("click", (event) => {
-        event.preventDefault();
-        new Book(inputTitle.value, inputAuthor.value, inputPages.value);
-        displayLibrary();
-    })
+});
 
-})
 
+const dialogSubmit = document.querySelector("#dialogSubmit");
+dialogSubmit.addEventListener("click", (event) => {
+    event.preventDefault();
+    new Book(inputTitle.value, inputAuthor.value, inputPages.value);
+    displayLibrary();
+});
+ 
 
 function displayLibrary() {
     const libraryDiv = document.querySelector("#libraryDiv");
