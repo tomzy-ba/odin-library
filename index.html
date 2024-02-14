@@ -20,10 +20,14 @@
 
     <dialog id="bookDialog">
         <h2>Enter Your New Book</h2>
-        <input type="text" id="inputTitle">
-        <input type="text" id="inputAuthor">
-        <input type="text" id="inputPages">
+        <form id="bookForm">
+
+        <input type="text" required id="inputTitle">
+        <input type="text" required id="inputAuthor">
+        <input type="number" required id="inputPages">
+
         <button id="dialogSubmit">submit</button>
+        </form>
     </dialog>
 
     

@@ -27,9 +27,12 @@ document.querySelector("#newBookButton").addEventListener("click", () => {
 
 const dialogSubmit = document.querySelector("#dialogSubmit");
 dialogSubmit.addEventListener("click", (event) => {
+    const bookForm = document.querySelector("#bookForm");
+    if (bookForm.checkValidity()) {
     event.preventDefault();
     new Book(inputTitle.value, inputAuthor.value, inputPages.value);
     displayLibrary();
+    } else {alert("input error")}
 });
  
 
